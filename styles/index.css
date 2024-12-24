@@ -1,0 +1,85 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #11005f;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Contenedor de los servicios */
+#servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.servicio {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+}
+
+.servicio input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilo para el botón de finalizar cotización */
+#finalizar {
+    display: block;
+    background-color: #286ea7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 30px auto 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Estilos para el resumen de la cotización */
+#resultado {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#resultado ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultado li {
+    margin: 5px 0;
+}
+
+#resultado strong {
+    color: #270761;
+    font-size: 22px;
+}
