@@ -1,7 +1,7 @@
 // Mostrar servicios
 function mostrarServicios() {
     const contenedorServicios = document.getElementById("servicios");
-    console.log("Mostrando los servicios disponibles...");
+    console.log("Servicios disponibles:");
 
     servicios.forEach(servicio => {
         console.log(`Servicio: ${servicio.nombre} - Precio: $${servicio.precio}`);
@@ -24,13 +24,13 @@ function aplicarDescuento(total) {
 
     switch (descuento) {
         case "1":
-            total -= total * 0.20;;
-            alert("¡Has obtenido un descuento del 20% por pagar con Visa Santander!");
+            total -= total * 0.20;
+            alert("¡Obtuviste descuento del 20% por pagar con Visa Santander!");
             console.log("Descuento aplicado: 20% (Visa Santander)");
             break;
         case "2":
             total -= total * 0.10;
-            alert("¡Has obtenido un descuento del 10% por pagar en efectivo!");
+            alert("¡Obtuviste un descuento del 10% por pagar en efectivo!");
             console.log("Descuento aplicado: 10% (Pago en efectivo)");
             break;
         case "3":
@@ -42,7 +42,7 @@ function aplicarDescuento(total) {
             console.log("Opción no válida. No se aplicará ningún descuento.");
             break;
     }
-    console.log(`Total después del descuento: $${total}`);
+    console.log(`Total con descuento : $${total}`);
     return total;
 }
 
@@ -50,8 +50,8 @@ function aplicarDescuento(total) {
 function finalizarCotizacion() {
     console.log("Finalizando cotización...");
     const cantidadInputs = document.querySelectorAll(".cantidad-servicio");
-    seleccionServicios = [];
-    total = 0;
+    let seleccionServicios = [];
+    let total = 0;
 
     cantidadInputs.forEach(input => {
         const servicioId = input.id.replace("cantidad-", "");
@@ -65,7 +65,10 @@ function finalizarCotizacion() {
         }
     });
 
-    if (seleccionServicios.length === 0) {
+    // Filtrar solo los servicios seleccionados(con cantidad mayor a cero) es decir no toma en cuenta los servicios en 0
+    const serviciosSeleccionados = seleccionServicios.filter(servicio => servicio.cantidad > 0);
+
+    if (serviciosSeleccionados.length === 0) {
         alert("No seleccionaste ningún servicio.");
         console.log("No se seleccionaron servicios.");
         return;
@@ -78,7 +81,7 @@ function finalizarCotizacion() {
     resultado.innerHTML = `
         <h2>Resumen de la Cotización</h2>
         <ul>
-            ${seleccionServicios.map(servicio => `<li>${servicio.nombre} - ${servicio.cantidad} unidad(es) - $${servicio.precio * servicio.cantidad}</li>`).join("")}
+            ${serviciosSeleccionados.map(servicio => `<li>${servicio.nombre} - ${servicio.cantidad} unidad(es) - $${servicio.precio * servicio.cantidad}</li>`).join("")}
         </ul>
         <p>Total a pagar: <strong>$${total.toFixed(2)}</strong></p>
     `;
