@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+=======
 
 body {
     font-family: Arial, sans-serif;
@@ -5,10 +11,44 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+>>>>>>> 8b5ed19b8c8d457afbe416e7e0e37484e86908a9
 }
 
 h1 {
     text-align: center;
+<<<<<<< HEAD
+}
+
+#servicios {
+    margin-top: 20px;
+}
+
+.servicio {
+    margin-bottom: 10px;
+}
+
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+}
+
+button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+=======
     color: #11005f;
     margin-bottom: 20px;
 }
@@ -82,4 +122,5 @@ p {
 #resultado strong {
     color: #270761;
     font-size: 22px;
+>>>>>>> 8b5ed19b8c8d457afbe416e7e0e37484e86908a9
 }
